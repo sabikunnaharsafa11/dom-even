@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>more events</h2>
+    <section>
+        <h3 id="secret-info">very very importan secret information</h3>
+        <input id="delect-confirm" type="text" placeholder="please type delete">
+        <button id="delete-btn">Delete</button>
+    </section>
+
+    <script>
+        document.getElementById('delete-btn').addEventListener('click', function() {
+       document.getElementById('secret-info').style.display = 'none';
+        })
+    //  focus
+        document.getElementById('delect-confirm').addEventListener('focus', function() {
+       document.body.style.backgroundColor = 'lightcoral';
+        })
+    //  blur
+        document.getElementById('delect-confirm').addEventListener('blur', function() {
+       document.body.style.backgroundColor = 'white';
+        })
+
+    // // // keydown
+    // //     document.getElementById('delect-confirm').addEventListener('keydown', function() {
+    // //         const deleteField = document.getElementById('delect-confirm');
+    // //         console.log(deleteField.value);
+       
+    //     })
+     // keypress   
+        // document.getElementById('delect-confirm').addEventListener('keypress', function() {
+        //     const deleteField = document.getElementById('delect-confirm');
+        //     console.log(deleteField.value);
+       
+        // })
+    // keyup
+        document.getElementById('delect-confirm').addEventListener('keyup', function(event) {
+            const deleteBtn = document.getElementById('delete-btn');
+            if(event.target.value == 'delete'){
+                 deleteBtn.removeAttribute('disablead');
+
+            }
+        })
+    // change
+        document.getElementById('delect-confirm').addEventListener('change', function() {
+            const deleteField = document.getElementById('delect-confirm');
+            console.log(deleteField.value);
+       
+        })
+
+
+
+
+    </script>
+    
+</body>
+</html>
